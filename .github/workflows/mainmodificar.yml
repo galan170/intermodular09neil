@@ -29,3 +29,4 @@ jobs:
           git add --all
           git commit -m "Afegit contingut a README.md i modificat index.html"
           git push
+
