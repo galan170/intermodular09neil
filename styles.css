@@ -1,43 +1,61 @@
+/* Fons difuminat amb la imatge */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("Fotofondo.jpg") center/cover no-repeat;
+    filter: blur(12px) brightness(0.75);
+    z-index: -1;
+}
+
+/* Estil general */
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #e8e8e8, #fdfdfd);
-    color: #222;
+    color: #fff;
 }
 
+/* Capçalera i peu */
 header, footer {
-    background: #0d0d0d;
-    color: white;
     text-align: center;
     padding: 25px 0;
-    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
 }
 
+/* Galeria */
 .galeria {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
+    gap: 40px;
+    padding: 70px 20px;
     flex-wrap: wrap;
 }
 
+/* Targetes amb efecte glassmorphism */
 .card {
-    background: white;
-    border-radius: 14px;
-    padding: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 300px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    max-width: 300px;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.55);
 }
 
+/* Imatges totes iguals */
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
     display: block;
 }
 
