@@ -18,10 +18,14 @@ jobs:
         run: |
           echo -e "- ${{ github.actor }} modifica el repo ${{ github.repository }} : "`date`"\n" >> README.md
 
+      - name: Modifica index.html amb sed
+        run: |
+          sed -i '1i <!-- Fitxer modificat per ${{ github.actor }} el '`date`' -->' index.html
+
       - name: commit i push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add --all
-          git commit -m "Afegit contingut a README.md"
+          git commit -m "Afegit contingut a README.md i modificat index.html"
           git push
